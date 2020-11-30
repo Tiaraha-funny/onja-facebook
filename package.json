@@ -1,0 +1,25 @@
+{
+  "name": "onja-facebook",
+  "version": "1.0.0",
+  "description": "A simple facebkoo that Onja team create to keep practice on using reduce and compound component in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiaraha-funny/onja-facebook.git"
+  },
+  "author": "Peta jeannie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tiaraha-funny/onja-facebook/issues"
+  },
+  "homepage": "https://github.com/Tiaraha-funny/onja-facebook#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
+  }
+}

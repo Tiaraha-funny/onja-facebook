@@ -1,0 +1,30 @@
+body {
+    box-sizing: border-box;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.photo::before {
+    content: "";
+    background-image: url("/Smiling-me.e9c677c6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+/*# sourceMappingURL=/onja-facebook.e31bb0bc.css.map */
