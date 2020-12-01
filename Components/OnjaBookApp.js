@@ -19,7 +19,7 @@ function OnjaBookApp() {
               <Link to="/addPage">Add Page</Link>
           </li>
           <li>
-            <Link className="photo" to="/userName">UserName</Link>
+            <Link className="photo" to="/userName"><b>Frelah Barbara </b></Link>
           </li>
         </ul>
       </nav>

@@ -1,74 +1,83 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import UseOnjaBookContextProvider from "../Components/UseOnjaBookContextProvider";
-import facebookData from "../facebook.json";
+import UseOnjaBookContext from "../Components/UseOnjaBookContext";
+import facebookData from "../postData.json";
 
 const FeedPageStyle = styled.div`
-  width: 50%;
+  width: 70%;
   margin: auto;
 `;
 
-let postComments = [];
-
 function FeedPage() {
 
-  const [ { posts, count, comment }, dispatch ] = UseOnjaBookContextProvider();
-
-  // const [comment, setComment] = useState([]);
+  const [{posts, comments, vote }, dispatch] = UseOnjaBookContext();
 
   useEffect(() => {
-    dispatch({ type: "POST", posts: facebookData })
-    // setPosts(facebookData);
-    console.log(posts);
-}, [])
+    // setPosts(facebookData)
+    dispatch({ type: "POST", posts: facebookData });
+  }, []);
 
   function handleSubmitComment(e) {
     e.preventDefault();
     console.log("Post this comment");
+    // const findCommentById = posts.find((post) => post.id === id);
     const form = e.target;
+    // console.log(findCommentById);
     const comments = form.comment.value;
 
     const newComments = {
       id: Date.now(),
-      name: comments,
+      comment: comments,
     };
 
-    postComments.push(newComments);
-    dispatch({ type: "COMMENT", comment: [...postComments] })
-    // setComment([...postComments]);
+    dispatch({ type: "COMMENT", comments: newComments });
   }
 
-  function handleCountLike(id) {
-    const findById = posts.find(post => post.id === id)
-    dispatch({ type: "COUNT", like: findById.like++ })
-    // setCount(findById.like++)
-}
+  console.log(posts);
+  console.log(comments);
 
-console.log(comment);
-console.log(comment.name);
+  function handleCountLike() {
+    const findLikeDataById = posts.find((post) => post.postId);
+    console.log(findLikeDataById);
+    const getLikeId = findLikeDataById.likes;
+    console.log(getLikeId);
+    const findLikeById =  getLikeId.find((post) => post.likeId);
+    const getLikeById = findLikeById.isLiked;
+    if(!getLikeById) {
+      dispatch({ type: "LIKE"})
+    } else {
+      dispatch({ type: "UNLIKE" });
+    }
+  }
 
   return (
     <FeedPageStyle>
       {posts.map((post) => {
         return (
-          <div key={post.id}>
-            <div className="photo">
-              {post.userName} {post.date}
+          <div key={post.postId}>
+            <div className="mostComment">
+              <p className="photo">
+                <b>{post.userName}</b>
+              </p>
+              <p>{post.postDate}</p>
             </div>
-            {post.comment}
-            <img src={post.url} />
-            <button onClick={() => handleCountLike(post.id)}>like</button>
-            <div>{count} like your photo</div>
+            {post.postComment}
+            <img className="postPhoto" src={post.url} />
+            <div className="likeCount">
+              <button onClick={() => handleCountLike(post.postId)}>like</button>
+              <div>{vote} like your photo</div>
+            </div>
+
+            <div className="posted-comment"><br/> {post.friendsComment}</div>
+            <div className="posted-comment">Comment:{comments.comment}</div>
+
+            <form onSubmit={(e) => handleSubmitComment(e)}>
+              <input type="text" name="comment" placeholder="add a comment" />
+              <button>post</button>
+            </form>
           </div>
         );
       })}
-
-      <div className="posted-comment">Go:{comment.name}</div>
-
-      <form onSubmit={(e) => handleSubmitComment(e)}>
-        <input type="text" name="comment" placeholder="add a comment" />
-        <button>post</button>
-      </form>
     </FeedPageStyle>
   );
 }

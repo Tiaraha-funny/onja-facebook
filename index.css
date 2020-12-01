@@ -16,6 +16,12 @@ img {
     max-width: 100%;
 }
 
+.mostComment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .photo::before {
     content: "";
     background-image: url("./image/Smiling-me.jpg");
@@ -25,4 +31,17 @@ img {
     border-radius: 50%;
     width: 25px;
     height: 25px;
+    margin-bottom: -20px;
+}
+
+.postPhoto {
+    width: 100%;
+}
+
+.photo > b {
+    margin-left: 30px;
+}
+
+.likeCount {
+    display: flex;
 }
