@@ -35824,15 +35824,75 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"Components/UseOnjaBookContext.js":[function(require,module,exports) {
+},{"react-is":"node_modules/react-is/index.js","react":"node_modules/react/index.js","shallowequal":"node_modules/shallowequal/index.js","@emotion/stylis":"node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"postData.json":[function(require,module,exports) {
+module.exports = [{
+  "postId": 1606751682857,
+  "userName": "Frelah Barbara",
+  "postDate": "30/11/20",
+  "postComment": "Have a lovely day everyone",
+  "url": "https://onja.org/wp-content/uploads/2020/08/SOC01395-1170x520.jpg",
+  "likes": [{
+    "likeId": 1,
+    "vote": 1,
+    "isLiked": false
+  }],
+  "friendsComments": [{
+    "commentId": 1606944131312,
+    "username": "Vincia",
+    "comments": "Enjoy your code sweety!",
+    "date": 1606945935986,
+    "url": "https://scontent.ftnr3-1.fna.fbcdn.net/v/t1.0-9/126861849_833068910865859_7886044203357203087_o.jpg?_nc_cat=109&ccb=2&_nc_sid=174925&_nc_eui2=AeE8fEBXOK-mF4rqzQYUL4kITnZ7N0pEgK1Odns3SkSArYvSjBmOHvyx6_txoxONIr7X7ane3FpY-rIVzFk3LrTZ&_nc_ohc=iPyehGm8B0EAX_lE6TK&_nc_ht=scontent.ftnr3-1.fna&oh=7bfd4e3b1f73f644fb474fb6c05f6a22&oe=5FEEBEE3"
+  }, {
+    "commentId": 1606944159618,
+    "username": "Floridah Mickaella",
+    "comments": "Muahhh choucou",
+    "date": 1606945954907,
+    "url": "https://picsum.photos/200/400"
+  }]
+}, {
+  "postId": 1606828831008,
+  "userName": "Danique Ephlardinot",
+  "postDate": "01/12/20",
+  "postComment": "Be courage with a wonderful flowery day",
+  "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp1-dt3Eml26dmrHlnkevA4o8dzljcAWnjgQ&usqp=CAU",
+  "likes": [{
+    "likeId": 2,
+    "username": "",
+    "vote": 1,
+    "isLiked": false
+  }],
+  "friendsComments": [{
+    "commentId": 1606944241560,
+    "username": "Fredo Hajason",
+    "comments": "Beutiful flower dear!",
+    "date": 1606945889163,
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1lAehEXSUNSBWwvyC0ml6VOdZFQNUMNwqrQ&usqp=CAU"
+  }, {
+    "commentId": 1606944271798,
+    "username": "Rogette Marry Oland",
+    "comments": "OWA zalah efa karah tompony ai!!",
+    "date": 1606945907635,
+    "url": "data:image/jpeg;base64,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"
+  }]
+}];
+},{}],"Components/UseOnjaBookContext.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.UseOnjaBookContext = UseOnjaBookContext;
+exports.Contexts = void 0;
 
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
+
+var _postData = _interopRequireDefault(require("../postData.json"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -35852,10 +35912,13 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function UseOnjaBookContext() {
-  var _useReducer = (0, _react.useReducer)(function (state, action) {
-    console.log(action.posts);
+var Contexts = (0, _react.createContext)();
+exports.Contexts = Contexts;
 
+function UseOnjaBookContext(_ref) {
+  var children = _ref.children;
+
+  var _useReducer = (0, _react.useReducer)(function (state, action) {
     switch (action.type) {
       case "POST":
         {
@@ -35880,13 +35943,6 @@ function UseOnjaBookContext() {
           });
         }
 
-      case "COMMENT":
-        {
-          return _objectSpread(_objectSpread({}, state), {}, {
-            comments: action.comments
-          }); // return { ...state, comment: [...state.comments, action.comments] }
-        }
-
       case "NEW_POST":
         {
           return _objectSpread(_objectSpread({}, state), {}, {
@@ -35894,10 +35950,11 @@ function UseOnjaBookContext() {
           });
         }
     }
+
+    return state;
   }, {
     posts: [],
     comments: [],
-    // addPost: [],
     like: false,
     vote: 0
   }),
@@ -35905,50 +35962,20 @@ function UseOnjaBookContext() {
       state = _useReducer2[0],
       dispatch = _useReducer2[1];
 
-  return [state, dispatch];
+  (0, _react.useEffect)(function () {
+    dispatch({
+      type: "POST",
+      posts: _postData.default
+    });
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(Contexts.Provider, {
+    value: {
+      state: state,
+      dispatch: dispatch
+    }
+  }, children);
 }
-
-var _default = UseOnjaBookContext; // return { ...state, comment: action.comment }
-
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"postData.json":[function(require,module,exports) {
-module.exports = [{
-  "postId": "1606751682857",
-  "userName": "Frelah Barbara",
-  "postDate": "30/11/20",
-  "postComment": "Have a lovely day everyone",
-  "url": "https://onja.org/wp-content/uploads/2020/08/SOC01395-1170x520.jpg",
-  "likes": [{
-    "likeId": 1,
-    "vote": 10,
-    "isLiked": false
-  }],
-  "friendsComments": [{
-    "commentId": "one",
-    "username": "petah",
-    "comments": "Enjoy your code sweety!",
-    "date": "01/12/20"
-  }]
-}, {
-  "postId": "1606828831008",
-  "userName": "Fleuri Soaniaina",
-  "postDate": "01/12/20",
-  "postComment": "Be courage with a wonderful flowery day",
-  "url": "data:image/jpeg;base64,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",
-  "likes": [{
-    "likeId": 2,
-    "username": "",
-    "vote": 40,
-    "isLiked": false
-  }],
-  "friendsComments": [{
-    "likeId": "two",
-    "username": "",
-    "comments": "Beutiful flower dear!",
-    "date": "30/11/20"
-  }]
-}];
-},{}],"Pages/AddPage.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../postData.json":"postData.json"}],"Pages/AddPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35960,9 +35987,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _UseOnjaBookContext3 = _interopRequireDefault(require("../Components/UseOnjaBookContext"));
-
-var _postData = _interopRequireDefault(require("../postData.json"));
+var _UseOnjaBookContext = require("../Components/UseOnjaBookContext");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35974,21 +35999,13 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\nmargin: auto;\nwidth: 70%;\ntextarea {\n    height: 100px;\n    width: 90%;\n}\n"]);
@@ -36005,38 +36022,31 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var AddNewPostStyle = _styledComponents.default.div(_templateObject());
 
 function AddPage() {
-  var _UseOnjaBookContext = (0, _UseOnjaBookContext3.default)(),
-      _UseOnjaBookContext2 = _slicedToArray(_UseOnjaBookContext, 2),
-      posts = _UseOnjaBookContext2[0].posts,
-      dispatch = _UseOnjaBookContext2[1];
+  var _useContext = (0, _react.useContext)(_UseOnjaBookContext.Contexts),
+      state = _useContext.state,
+      dispatch = _useContext.dispatch;
 
-  var _useState = (0, _react.useState)(_postData.default),
-      _useState2 = _slicedToArray(_useState, 2),
-      newPost = _useState2[0],
-      setNewPost = _useState2[1];
-
-  console.log(newPost);
+  var posts = state.posts;
 
   function handleAddPosts(e) {
     e.preventDefault();
     console.log("Post this Post");
     var form = e.currentTarget;
-    console.log(form);
     var url = form.url.value;
     var newPosts = {
       postId: Date.now(),
       postComment: form.comments.value,
       url: url,
-      likes: 0
+      likes: 0,
+      friendsComments: [],
+      date: Date.now()
     };
-    setNewPost([].concat(_toConsumableArray(newPost), [newPosts]));
     dispatch({
       type: "POST",
-      posts: newPosts
+      posts: [].concat(_toConsumableArray(posts), [newPosts])
     });
   }
 
-  console.log(newPost);
   return /*#__PURE__*/_react.default.createElement(AddNewPostStyle, null, /*#__PURE__*/_react.default.createElement("p", null, "Add new post:"), /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: handleAddPosts
   }, /*#__PURE__*/_react.default.createElement("textarea", {
@@ -36050,7 +36060,7 @@ function AddPage() {
 
 var _default = AddPage;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js","../postData.json":"postData.json"}],"Pages/FeedPage.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js"}],"Pages/FeedPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36062,15 +36072,27 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _UseOnjaBookContext3 = _interopRequireDefault(require("../Components/UseOnjaBookContext"));
-
-var _postData = _interopRequireDefault(require("../postData.json"));
+var _UseOnjaBookContext = require("../Components/UseOnjaBookContext");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -36085,7 +36107,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 70%;\n  margin: auto;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 70%;\n  margin: auto;\n  .friendcomStyle {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n  }\n  .photoCom {\n    border-radius: 50%;\n    width: 20px;\n    height: 100%;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -36099,65 +36121,72 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var FeedPageStyle = _styledComponents.default.div(_templateObject());
 
 function FeedPage() {
-  var _UseOnjaBookContext = (0, _UseOnjaBookContext3.default)(),
-      _UseOnjaBookContext2 = _slicedToArray(_UseOnjaBookContext, 2),
-      _UseOnjaBookContext2$ = _UseOnjaBookContext2[0],
-      posts = _UseOnjaBookContext2$.posts,
-      comments = _UseOnjaBookContext2$.comments,
-      vote = _UseOnjaBookContext2$.vote,
-      dispatch = _UseOnjaBookContext2[1];
+  var _useContext = (0, _react.useContext)(_UseOnjaBookContext.Contexts),
+      state = _useContext.state,
+      dispatch = _useContext.dispatch;
 
-  (0, _react.useEffect)(function () {
-    // setPosts(facebookData)
+  var posts = state.posts,
+      vote = state.vote;
+
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      comment = _useState2[0],
+      setComment = _useState2[1];
+
+  function handleSubmitComment(e, id) {
+    console.log(id);
+    e.preventDefault();
+    console.log("Post this comment");
+    console.log(posts);
+    var mappingComment = posts.map(function (post) {
+      if (post.postId === id) {
+        return _objectSpread(_objectSpread({}, post), {}, {
+          friendsComments: [].concat(_toConsumableArray(post.friendsComments), [{
+            commentId: Date.now(),
+            comments: e.target.comments.value,
+            userName: "",
+            date: Date.now(),
+            url: ""
+          }])
+        });
+      }
+
+      return post;
+    });
     dispatch({
       type: "POST",
-      posts: _postData.default
-    });
-  }, []);
-
-  function handleSubmitComment(e) {
-    e.preventDefault();
-    console.log("Post this comment"); // const findCommentById = posts.find((post) => post.id === id);
-
-    var form = e.target; // console.log(findCommentById);
-
-    var comments = form.comment.value;
-    var newComments = {
-      id: Date.now(),
-      comment: comments
-    };
-    dispatch({
-      type: "COMMENT",
-      comments: newComments
+      posts: mappingComment
     });
   }
 
-  console.log(posts);
-  console.log(comments);
-
-  function handleCountLike() {
+  function handleCountLike(id) {
     var findLikeDataById = posts.find(function (post) {
-      return post.postId;
+      return post.postId === id;
     });
     console.log(findLikeDataById);
     var getLikeId = findLikeDataById.likes;
     console.log(getLikeId);
     var findLikeById = getLikeId.find(function (post) {
-      return post.likeId;
-    });
-    var getLikeById = findLikeById.isLiked;
+      console.log(post.likeId);
 
-    if (!getLikeById) {
-      dispatch({
-        type: "LIKE"
-      });
-    } else {
-      dispatch({
-        type: "UNLIKE"
-      });
-    }
+      if (post.likeId !== vote) {
+        dispatch({
+          type: "LIKE",
+          vote: vote.length
+        });
+      } else {
+        dispatch({
+          type: "UNLIKE"
+        });
+      }
+
+      return post;
+    }); //post.likeId
+
+    console.log(findLikeById);
   }
 
+  console.log(posts);
   return /*#__PURE__*/_react.default.createElement(FeedPageStyle, null, posts.map(function (post) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: post.postId
@@ -36176,25 +36205,39 @@ function FeedPage() {
       }
     }, "like"), /*#__PURE__*/_react.default.createElement("div", null, vote, " like your photo")), /*#__PURE__*/_react.default.createElement("div", {
       className: "posted-comment"
-    }, /*#__PURE__*/_react.default.createElement("br", null), " ", post.friendsComment), /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement("br", null), post.friendsComments.map(function (com) {
+      var postingDate = new Date(Number(com.date));
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: com.commentId
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+        src: com.url,
+        className: "photoCom"
+      }), " ", com.username, /*#__PURE__*/_react.default.createElement("div", {
+        className: "friendcomStyle"
+      }, /*#__PURE__*/_react.default.createElement("p", null, com.comments), /*#__PURE__*/_react.default.createElement("p", null, postingDate.toLocaleDateString()))));
+    })), /*#__PURE__*/_react.default.createElement("div", {
       className: "posted-comment"
-    }, "Comment:", comments.comment), /*#__PURE__*/_react.default.createElement("form", {
+    }), /*#__PURE__*/_react.default.createElement("form", {
       onSubmit: function onSubmit(e) {
-        return handleSubmitComment(e);
+        return handleSubmitComment(e, post.postId);
       }
     }, /*#__PURE__*/_react.default.createElement("input", {
       type: "text",
-      name: "comment",
+      name: "comments",
+      value: comment,
+      onChange: function onChange(e) {
+        return setComment(e.target.value);
+      },
       placeholder: "add a comment"
     }), /*#__PURE__*/_react.default.createElement("button", null, "post")));
   }));
 }
 
-var _default = FeedPage; //const postingDate = new Date(Number(posts.date));
-//{postingDate.toLocaleDateString()}
+var _default = FeedPage; //
+//
 
 exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js","../postData.json":"postData.json"}],"Pages/UserName.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js"}],"Pages/UserName.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36357,12 +36400,14 @@ var _reactRouterDom = require("react-router-dom");
 
 var _OnjaBookApp = _interopRequireDefault(require("./Components/OnjaBookApp"));
 
+var _UseOnjaBookContext = require("./Components/UseOnjaBookContext");
+
 require("./index.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_OnjaBookApp.default, null)), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/OnjaBookApp":"Components/OnjaBookApp.js","./index.css":"index.css"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_UseOnjaBookContext.UseOnjaBookContext, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_OnjaBookApp.default, null))), document.getElementById("root"));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Components/OnjaBookApp":"Components/OnjaBookApp.js","./Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js","./index.css":"index.css"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36390,7 +36435,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49691" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56190" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import UseOnjaBookContext from "../Components/UseOnjaBookContext";
-import facebookData from "../postData.json";
+import { Contexts } from "../Components/UseOnjaBookContext";
 
 const AddNewPostStyle = styled.div`
 margin: auto;
@@ -13,30 +12,27 @@ textarea {
 `
 
 function AddPage() {
-  const [{ posts }, dispatch] = UseOnjaBookContext();
-  const [ newPost, setNewPost ] = useState(facebookData)
-
-  console.log(newPost);
-
+  const { state, dispatch } = useContext(Contexts);
+  const {posts} = state;
+ 
+ 
   function handleAddPosts(e) {
     e.preventDefault();
     console.log("Post this Post");
-    const form = e.currentTarget;
-    console.log(form);
+    const form = e.currentTarget;     
     const url = form.url.value;
   
     const newPosts = {
       postId: Date.now(),
       postComment: form.comments.value,
       url: url,
-      likes: 0
+      likes: 0,
+      friendsComments: [],
+      date: Date.now()
     };
   
-    setNewPost([ ...newPost, newPosts ]);
-    dispatch({ type: "POST", posts: newPosts})
+    dispatch({ type: "POST", posts: [...posts, newPosts]})
   }
-
-  console.log(newPost);
 
   return (
     <AddNewPostStyle>

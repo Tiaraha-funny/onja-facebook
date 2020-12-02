@@ -1,40 +1,45 @@
-import { useReducer } from 'react';
+import React, { createContext, useEffect, useReducer } from "react";
 
-function UseOnjaBookContext() {
+import facebookData from "../postData.json";
 
-    const [state, dispatch] = useReducer((state, action) => {
+const Contexts = createContext();
 
-        console.log(action.posts);
-
-        switch(action.type) {
-            case "POST": {
-                return { ...state, posts: action.posts }
-            }
-            case "LIKE": {
-                return { ...state, like: !state.like, vote: state.vote + 1 }
-            }
-            case "UNLIKE": {
-                return { ...state, like: !state.like, vote: state.vote - 1 }
-            }
-            case "COMMENT": {
-                return { ...state, comments: action.comments }
-                // return { ...state, comment: [...state.comments, action.comments] }
-            }
-            case "NEW_POST": {
-                return { ...state, addPost: action.newPosts  }
-            }
+function UseOnjaBookContext({ children }) {
+  const [state, dispatch] = useReducer(
+    (state, action) => {
+      switch (action.type) {
+        case "POST": {
+          return { ...state, posts: action.posts };
         }
+        case "LIKE": {
+          return { ...state, like: !state.like, vote: state.vote + 1 };
+        }
+        case "UNLIKE": {
+          return { ...state, like: !state.like, vote: state.vote - 1 };
+        }
+        case "NEW_POST": {
+          return { ...state, addPost: action.newPosts };
+        }
+      }
+      return state;
+    },
+    {
+      posts: [],
+      comments: [],
+      like: false,
+      vote: 0,
+    }
+  );
 
-    }, {
-        posts: [],
-        comments: [],
-        // addPost: [],
-        like: false,
-        vote: 0,
-    })
-    return [ state, dispatch ];
+  useEffect(() => {
+    dispatch({ type: "POST", posts: facebookData });
+  }, []);
+
+  return (
+    <Contexts.Provider value={{ state, dispatch }}>
+      {children}
+    </Contexts.Provider>
+  );
 }
 
-export default UseOnjaBookContext;
-
-// return { ...state, comment: action.comment }
+export { UseOnjaBookContext, Contexts };
