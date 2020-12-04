@@ -21,6 +21,25 @@ function UseOnjaBookContext({ children }) {
         case "NEW_POST": {
           return { ...state, addPost: action.newPosts };
         }
+
+        case 'UPDATE_CURRENT_USER': {
+          const newUsersArray = state.users.map(user => {
+            if (user.userId === state.currentUser) {
+              // update the user and return it
+              return {
+                ...user,
+                userName: action.userName,
+                profilePictureUrl: action.profilePictureUrl,
+              };
+            }
+            return user;
+          });
+          return {
+            ...state,
+            users: newUsersArray,
+          };
+        }
+
         case "SWITCH_ACCOUNT": {
           return { ...state, switchAccount: action.userSwitchAccount }
         }
@@ -30,7 +49,8 @@ function UseOnjaBookContext({ children }) {
     {
       posts: [],
       comments: [],
-      switchAccount: [],
+      users: userData,
+      currentUser: "1",
       like: false,
       vote: 0,
     }

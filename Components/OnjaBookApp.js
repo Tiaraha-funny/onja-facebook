@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
+import AddAccouts from "../Pages/AccountsPages/AddAccouts";
+import ProfileOptions from "../Pages/AccountsPages/ProfileOptions";
+import SwitchAccounts from "../Pages/AccountsPages/SwitchAccounts";
 import AddPage from "../Pages/AddPage";
 import FeedPage from "../Pages/FeedPage";
 import UserName from "../Pages/UserName";
@@ -16,10 +19,12 @@ function OnjaBookApp() {
             <Link to="/">Feed page</Link>
           </li>
           <li>
-              <Link to="/addPage">Add Page</Link>
+            <Link to="/addPage">Add Page</Link>
           </li>
           <li>
-            <Link className="photo" to="/userName"><b>Frelah Barbara </b></Link>
+            <Link className="photo" to="/userName">
+              <b>Frelah Barbara </b>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -28,11 +33,20 @@ function OnjaBookApp() {
         <Route exact path="/">
           <FeedPage />
         </Route>
-        <Route path="/userName">
-          <UserName/>
-        </Route>
         <Route path="/addPage">
-            <AddPage/>
+          <AddPage />
+        </Route>
+        <Route path="/userName">
+          <UserName />
+        </Route>
+        <Route exact path="/userName/:profilesOptionsId">
+          <ProfileOptions />
+        </Route>
+        <Route path="/userName/:SwitchAccounts">
+          <SwitchAccounts/>
+        </Route>
+        <Route path="/userName/:AddAccounts">
+          <AddAccouts/>
         </Route>
       </Switch>
     </main>

@@ -33853,7 +33853,25 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"Pages/AccountsPages/AddAccouts.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AddAccouts() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hloea Ad"));
+}
+
+var _default = AddAccouts;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
 //
 
 module.exports = function shallowEqual(objA, objB, compare, compareContext) {
@@ -35964,6 +35982,24 @@ function UseOnjaBookContext(_ref) {
           });
         }
 
+      case 'UPDATE_CURRENT_USER':
+        {
+          var newUsersArray = state.users.map(function (user) {
+            if (user.userId === state.currentUser) {
+              // update the user and return it
+              return _objectSpread(_objectSpread({}, user), {}, {
+                userName: action.userName,
+                profilePictureUrl: action.profilePictureUrl
+              });
+            }
+
+            return user;
+          });
+          return _objectSpread(_objectSpread({}, state), {}, {
+            users: newUsersArray
+          });
+        }
+
       case "SWITCH_ACCOUNT":
         {
           return _objectSpread(_objectSpread({}, state), {}, {
@@ -35976,7 +36012,8 @@ function UseOnjaBookContext(_ref) {
   }, {
     posts: [],
     comments: [],
-    switchAccount: [],
+    users: _userData.default,
+    currentUser: "1",
     like: false,
     vote: 0
   }),
@@ -36001,7 +36038,146 @@ function UseOnjaBookContext(_ref) {
     }
   }, children);
 }
-},{"react":"node_modules/react/index.js","../postData.json":"postData.json","../userData.json":"userData.json"}],"Pages/AddPage.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../postData.json":"postData.json","../userData.json":"userData.json"}],"Pages/AccountsPages/ProfileOptions.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _UseOnjaBookContext = require("../../Components/UseOnjaBookContext");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  display: grid;\n  gap: 10px;\n  grid-template-columns: 200px;\n  textarea {\n    height: 100px;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var FormStyle = _styledComponents.default.form(_templateObject());
+
+function ProfileOptions() {
+  var _useContext = (0, _react.useContext)(_UseOnjaBookContext.Contexts),
+      state = _useContext.state,
+      dispatch = _useContext.dispatch;
+
+  var users = state.users,
+      currentUser = state.currentUser;
+
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      userName = _useState2[0],
+      setUserName = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      profilePictureUrl = _useState4[0],
+      setProfilePictureUrl = _useState4[1];
+
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      profilesOptionsId = _useParams.profilesOptionsId;
+
+  console.log(profilesOptionsId);
+  var findId = users.find(function (post) {
+    return post.userId === profilesOptionsId;
+  });
+  console.log(findId.userId); // we get the full current user object back, so we have a name and picture instead of just an id
+
+  var currentUserObj = users.find(function (user) {
+    return user.userId === currentUser;
+  }) || {
+    userName: "",
+    profilePictureUrl: ""
+  }; // at the beginning, the users array will be empty. so we want to update our inputs with the good values when it will be updated!
+
+  (0, _react.useEffect)(function () {
+    setUserName(currentUserObj.userName);
+    setProfilePictureUrl(currentUserObj.profilePictureUrl);
+  }, [users]);
+
+  function handleNewOptions(e) {
+    e.preventDefault();
+    dispatch({
+      type: "UPDATE_CURRENT_USER",
+      userName: userName,
+      profilePictureUrl: profilePictureUrl
+    });
+    alert("Profile updated successfully");
+  }
+
+  return /*#__PURE__*/_react.default.createElement(FormStyle, {
+    onSubmit: handleNewOptions
+  }, findId.map(function (user) {
+    return /*#__PURE__*/_react.default.createElement("li", null, user.userName);
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "",
+    value: userName,
+    onChange: function onChange(e) {
+      return setUserName(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "url",
+    value: profilePictureUrl,
+    onChange: function onChange(e) {
+      return setProfilePictureUrl(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("button", null, "Save"));
+}
+
+var _default = ProfileOptions;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js"}],"Pages/AccountsPages/SwitchAccounts.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function SwitchAccounts() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello"));
+}
+
+var _default = SwitchAccounts;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"Pages/AddPage.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36269,52 +36445,39 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = UserNameProfiles;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _reactRouterDom = require("react-router-dom");
 
 var _UseOnjaBookContext = require("../Components/UseOnjaBookContext");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  margin: auto;\n  width: 70%;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var OptionsStyle = _styledComponents.default.div(_templateObject());
-
-function UserName() {
+function UserNameProfiles() {
   var _useContext = (0, _react.useContext)(_UseOnjaBookContext.Contexts),
-      state = _useContext.state,
-      dispatch = _useContext.dispatch;
+      state = _useContext.state;
 
-  var userSwitchAccount = state.userSwitchAccount;
-  return /*#__PURE__*/_react.default.createElement(OptionsStyle, null, /*#__PURE__*/_react.default.createElement("div", null, "Options:"), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Username: "), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "type your username here"
-  })), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", null, "Profile picture: "), /*#__PURE__*/_react.default.createElement("input", {
-    type: "url",
-    placeholder: "Paste a url here"
-  })), /*#__PURE__*/_react.default.createElement("button", null, "Save")));
+  var users = state.users;
+  console.log(state);
+  var findId = users.find(function (post) {
+    return post.userId;
+  });
+  console.log(findId);
+  var id = findId.userId;
+  console.log(id);
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Profile Options"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/userName/".concat(findId.userId)
+  }, "Account Options")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "Switch Account")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "Add a new Account")))));
 }
-
-var _default = UserName;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js"}],"Components/OnjaBookApp.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Components/UseOnjaBookContext":"Components/UseOnjaBookContext.js"}],"Components/OnjaBookApp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36325,6 +36488,12 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _AddAccouts = _interopRequireDefault(require("../Pages/AccountsPages/AddAccouts"));
+
+var _ProfileOptions = _interopRequireDefault(require("../Pages/AccountsPages/ProfileOptions"));
+
+var _SwitchAccounts = _interopRequireDefault(require("../Pages/AccountsPages/SwitchAccounts"));
 
 var _AddPage = _interopRequireDefault(require("../Pages/AddPage"));
 
@@ -36346,15 +36515,22 @@ function OnjaBookApp() {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_FeedPage.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/addPage"
+  }, /*#__PURE__*/_react.default.createElement(_AddPage.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/userName"
   }, /*#__PURE__*/_react.default.createElement(_UserName.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/addPage"
-  }, /*#__PURE__*/_react.default.createElement(_AddPage.default, null))));
+    exact: true,
+    path: "/userName/:profilesOptionsId"
+  }, /*#__PURE__*/_react.default.createElement(_ProfileOptions.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/userName/:SwitchAccounts"
+  }, /*#__PURE__*/_react.default.createElement(_SwitchAccounts.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/userName/:AddAccounts"
+  }, /*#__PURE__*/_react.default.createElement(_AddAccouts.default, null))));
 }
 
 var _default = OnjaBookApp;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Pages/AddPage":"Pages/AddPage.js","../Pages/FeedPage":"Pages/FeedPage.js","../Pages/UserName":"Pages/UserName.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Pages/AccountsPages/AddAccouts":"Pages/AccountsPages/AddAccouts.js","../Pages/AccountsPages/ProfileOptions":"Pages/AccountsPages/ProfileOptions.js","../Pages/AccountsPages/SwitchAccounts":"Pages/AccountsPages/SwitchAccounts.js","../Pages/AddPage":"Pages/AddPage.js","../Pages/FeedPage":"Pages/FeedPage.js","../Pages/UserName":"Pages/UserName.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -36472,7 +36648,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50944" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51998" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

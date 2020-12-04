@@ -1,33 +1,32 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+import { Link, useParams } from "react-router-dom";
 import { Contexts } from "../Components/UseOnjaBookContext";
 
-const OptionsStyle = styled.div`
-  margin: auto;
-  width: 70%;
-`;
-
-function UserName() {
-
-  const { state, dispatch } = useContext(Contexts);
-  const { userSwitchAccount } = state;
+export default function UserNameProfiles() {
+  const { state } = useContext(Contexts);
+  const { users } = state;
+  console.log(state);
+  const findId = users.find((post) => post.userId);
+  console.log(findId);
+  const id = findId.userId
+  console.log(id);
 
   return (
-    <OptionsStyle>
-      <div>Options:</div>
-      <form >
-        <p>
-          <label>Username: </label>
-          <input type="text" placeholder="type your username here" />
-        </p>
-        <p>
-          <label>Profile picture: </label>
-          <input type="url" placeholder="Paste a url here" />
-        </p>
-        <button>Save</button>
-      </form>
-    </OptionsStyle>
+    <div>
+      <h2>Profile Options</h2>
+      <nav>
+        <ul>
+          <li>
+            <Link to={`/userName/${findId.userId}`}>Account Options</Link>
+          </li>
+          <li>
+            <Link to="/">Switch Account</Link>
+          </li>
+          <li>
+            <Link to="/">Add a new Account</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
-
-export default UserName;
