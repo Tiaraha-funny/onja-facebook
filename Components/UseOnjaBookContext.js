@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useReducer } from "react";
 
 import facebookData from "../postData.json";
+import userData from "../userData.json";
 
 const Contexts = createContext();
 
@@ -20,12 +21,16 @@ function UseOnjaBookContext({ children }) {
         case "NEW_POST": {
           return { ...state, addPost: action.newPosts };
         }
+        case "SWITCH_ACCOUNT": {
+          return { ...state, switchAccount: action.userSwitchAccount }
+        }
       }
       return state;
     },
     {
       posts: [],
       comments: [],
+      switchAccount: [],
       like: false,
       vote: 0,
     }
@@ -33,6 +38,7 @@ function UseOnjaBookContext({ children }) {
 
   useEffect(() => {
     dispatch({ type: "POST", posts: facebookData });
+    dispatch({ type: "SWITCH_ACCOUNT", userSwitchAccount: userData })
   }, []);
 
   return (
